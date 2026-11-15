@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RB IPTV</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b111a">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="logo" aria-label="RB IPTV">RB<span>▶</span></div>
+  <nav id="nav">
+    <button data-view="live" class="navbtn">Live TV</button>
+    <button data-view="movies" class="navbtn">Movies</button>
+    <button data-view="series" class="navbtn">Series</button>
+    <button data-view="favs" class="navbtn">Favourites</button>
+    <button data-view="search" class="navbtn">Search</button>
+    <button data-view="menu" class="navbtn">Menu</button>
+  </nav>
+</header>
+<div class="gradline"></div>
+<main id="main"></main>
+
+<div id="login" class="hidden">
+  <div class="card login-card">
+    <h2>Inloggen</h2>
+    <p class="muted">Vul de gegevens van je IPTV-provider (Xtream Codes) in.</p>
+    <label>Server URL<input id="l-server" placeholder="http://provider.example:8080" autocapitalize="off"></label>
+    <label>Gebruikersnaam<input id="l-user" autocapitalize="off"></label>
+    <label>Wachtwoord<input id="l-pass" type="password"></label>
+    <label>TMDB API-sleutel (voor zoeken op acteur, posters en populariteit)<input id="l-tmdb" autocapitalize="off"></label>
+    <button id="l-go" class="pill active">Inloggen</button>
+    <p id="l-err" class="muted"></p>
+  </div>
+</div>
+
+<div id="player" class="hidden">
+  <video id="video" controls autoplay></video>
+  <button id="p-close" class="btn">✕ Sluiten</button>
+  <button id="p-skip" class="btn hidden">Intro overslaan</button>
+</div>
+
+<div id="detail" class="hidden"></div>
+
+<script src="hls.min.js" onerror="void 0"></script>
+<script src="app.js"></script>
+</body>
+</html>
